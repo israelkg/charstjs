@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Update and Destroy</title>
+</head>
+<body style="height: 700px; display: flex; align-items: center; justify-content: center">
+    <div style="width: 800px;"> <canvas class="pizza-chart"></canvas> </div>
+
+    <div class="buttons" style="display: flex; flex-direction: column; justify-content: center; gap: 10px;">
+        <button onclick="updateChart()"  style="background: #329527; border: 0; padding: 10px 20px; border-radius: 20px; color: white; cursor: pointer;">Add</button>
+        <button onclick="removeDataset()"  style="background: #9e8c25; border: 0; padding: 10px 20px; border-radius: 20px; color: white; cursor: pointer;">Remove</button>
+        <button onclick="destroyChart()" style="background: #8f2626; border: 0; padding: 10px 20px; border-radius: 20px; color: white; cursor: pointer;">Destroy</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./pizzaChart.js"></script>
+    <script src="./pizzaChartUtils.js"></script>
+</body>
+</html>
