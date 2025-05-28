@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Grafico de Barras</title>
+</head>
+<body>
+    <div><canvas class="bar-chart"></canvas></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.querySelector('.bar-chart');
+
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [{
+                    label: "Taxa de Vendas em 2023",
+                    data: [4, 10, 7, 5, 8, 12, 18],
+                    borderWidth: 5,
+                    borderColor: 'rgba(77, 186, 255, 0.5)',
+                    backgroundColor: 'rgba(77, 186, 255, 1)',
+                }, {
+                    label: "Taxa de Vendas em 2024",
+                    data: [4, 12, 8, 3, 5, 8, 12],
+                    borderWidth: 5,
+                    borderColor: 'rgba(88, 200, 60, 0.5)',
+                    backgroundColor: 'rgba(100, 150, 60, 1)',
+                },]
+            },
+            options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Relátorio de Vendas Anuais',
+                        font: {
+                            size: 20,
+                            weight: 'bold',
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

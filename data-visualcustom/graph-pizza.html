@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Graphic in Pizza</title>
+</head>
+<body style="height: 1050px; display: flex; align-items: center; justify-content: center">
+    <div style="width: 500px;"><canvas class="pizza-chart"></canvas></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.querySelector('.pizza-chart');
+
+        var myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Catupiry', 'Calabresa', 'Mussarela', 'Bacon'],
+                datasets: [{
+                    label: 'Vendas de Pizza em Maio',
+                    data: [12, 19, 3, 5],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                    ],
+                },]
+            },
+            options: {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const value = context.raw;   //valor individual
+                                const allValues = context.chart.data.datasets[0].data;
+
+                                let total = allValues.reduce((acc, valueAtual) => acc + valueAtual, 0);
+                                let porcentagem = (value / total) * 100;
+                                return porcentagem.toFixed(1) + '% de Vendas';
+                            }
+                        },
+                        bodyFont: {
+                            size: 20,
+                            weight: 'bold',
+                            family: 'Arial',
+                        },
+                        titleColor: 'white',
+                        backgroundColor: '#323131',
+
+                    },
+                    title: {
+                        display: true,
+                        text: 'Vendas de Pizza em Maio',
+                        font: {
+                            size: 40,
+                            weight: 'bold',
+                            family: 'Arial',
+                        }
+                    },
+                    legend: {
+                        display: true,
+                        labels: {
+                            font: {
+                                size: 15,
+                                family: 'Verdana',
+                                weight: 'normal',
+                            },
+                            color: 'black',
+                        }
+                    }
+                },
+            }
+        })
+
+    </script>
+</body>
+</html>
