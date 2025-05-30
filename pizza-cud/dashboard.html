@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard Pizzaria</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main>
+        <section class="container">
+            <div class="dashboards">
+                <canvas class="charts chart-sale" id="salesChart"></canvas>
+                <div class="btn-utils">
+                    <button class="btn btn-add" id="openAddSaleModal">Add</button>
+                    <button class="btn btn-update" id="openUpdateSaleModal">Update</button>
+                    <button class="btn btn-delete" id="openRemoveSaleModal">Remove</button>
+                </div>
+            </div>
+
+            <div class="dashboards">
+                <canvas class="charts chart-type" id="typesChart"></canvas>
+                <div class="btn-utils">
+                    <button class="btn btn-add" id="openAddTypeModal">Add</button>
+                    <button class="btn btn-update" id="openUpdateTypeModal">Update</button>
+                    <button class="btn btn-delete">Remove</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+<!--MODALS SALES-->
+    <section class="modal" id="addModalSale">
+            <div class="modal-content">
+                <span class="close" data-close="addModalSale">&times;</span>
+
+                <div class="container-modal">
+                    <h1 class="titulo-modal">Adicione venda de Pizza</h1>
+
+                    <div class="container-form">
+                        <div class="form">
+                            <div class="campos">
+                                <label>Flavor</label>
+                                <input class="inputs flavor" type="text" id="flavorPizza" placeholder="Enter a flavor">
+                            </div>
+                            <div class="campos">
+                                <label>Quantidad</label>
+                                <input class="inputs quantidad" type="number" id="quantdPizza" placeholder="Enter a quantidad">
+                            </div>
+                            <div class="campos">
+                                <label>Select Color</label>
+                                <input class="color" type="color" id="colorPizza" placeholder="Enter a color">
+                            </div>
+                            <div class="campos">
+                                <label>Select a month</label>
+                                <select class="list-month" name="Mês" id="monthSale">
+                                    <option class="month-items" value="January">January</option>
+                                    <option class="month-items" value="February">February</option>
+                                    <option class="month-items" value="March">March</option>
+                                    <option class="month-items" value="April">April</option>
+                                    <option class="month-items" value="May">May</option>
+                                    <option class="month-items" value="June">June</option>
+                                </select>
+                            </div>
+
+                            <button class="btnConfirm" onclick="confirmBtn()">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="modal" id="updateModalSale">
+        <div class="modal-content">
+            <span class="close" data-close="updateModalSale">&times;</span>
+
+            <div class="container-modal">
+                <h1 class="titulo-modal">Atualize as vendas</h1>
+
+                <div class="container-form">
+                    <div class="form">
+                        <div class="campos">
+                            <label>Select a flavor </label>
+                            <select id="updateFlavorSelect">
+                                <option value="">Select a flavor</option>
+                            </select>
+                        </div>
+                        <div class="campos">
+                            <label>Select a month </label>
+                            <select class="list-month" id="monthSaleUp">
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                            </select>
+                        </div>
+                        <div class="campos">
+                            <label>New quantidad</label>
+                            <input class="inputs quantidad" type="number" id="quantidadUp" placeholder="Enter a quantidad">
+                        </div>
+                        <div class="campos">
+                            <label>Select Color</label>
+                            <input class="color" type="color" id="colorUp" placeholder="Enter a color">
+                        </div>
+
+                        <button class="btnConfirm" onclick="confirmBtnUp()">Atualizar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="modal" id="removeModalSale">
+        <div class="modal-content">
+            <span class="close" data-close="removeModalSale">&times;</span>
+
+            <div class="container-modal">
+                <h1 class="titulo-modal">Remova a venda de Pizza</h1>
+
+                <div class="container-form">
+                    <div class="form">
+                        <div class="campos">
+                            <select id="removeFlavorSelect">
+                                <option value="">Select a flavor</option>
+                            </select>
+                        </div>
+
+                        <button class="btnConfirmRemove" onclick="confirmBtnRemove()">Remover</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+<!--MODAL TYPES-->
+    <section class="modal" id="addModalType">
+<!--        <div class="container-modal">-->
+            <div class="modal-content">
+                <span class="close" data-close="closeModal">&times;</span>
+                <h1 class="titulo-modal">Adicione tipo de venda Pizza</h1>
+
+                <div class="form">
+                    <div class="campos">
+                        <label>Tipos</label>
+                        <input type="text" placeholder="Digite o tipo">
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="modal" id="updateModalType">
+<!--        <div class="container-modal">-->
+            <div class="modal-content">
+                <span class="close" data-close="closeModal">&times;</span>
+                <h1 class="titulo-modal">Atualize os tipos</h1>
+
+                <div class="form">
+                    <div class="campos">
+                        <label>Tipos</label>
+                        <input type="text" placeholder="Digite o tipo">
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/typesChart.js"></script>
+    <script src="./js/salesChart.js"></script>
+
+</body>
+</html>
