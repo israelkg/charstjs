@@ -19,3 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+function generateChartDataArray(labelSelecionado, valor, listaDeLabels, tamanhoArray){
+    const indexOf = listaDeLabels.indexOf(labelSelecionado);
+    if(indexOf == -1){
+        alert("Index nao foi encontrado");
+        return;
+    }
+    const array = Array(tamanhoArray).fill(0);
+    array[indexOf] = valor;
+    return array
+}

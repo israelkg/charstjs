@@ -12,18 +12,16 @@
             <div class="dashboards">
                 <canvas class="charts chart-sale" id="salesChart"></canvas>
                 <div class="btn-utils">
-                    <button class="btn btn-add" id="openAddSaleModal">Add</button>
-                    <button class="btn btn-update" id="openUpdateSaleModal">Update</button>
-                    <button class="btn btn-delete" id="openRemoveSaleModal">Remove</button>
+                    <button class="btn btn-add" id="openAddSaleModal">✚ Add</button>
+                    <button class="btn btn-update" id="openUpdateSaleModal">✏️ Update</button>
+                    <button class="btn btn-delete" id="openRemoveSaleModal">🗑️ Remove</button>
                 </div>
             </div>
 
             <div class="dashboards">
-                <canvas class="charts chart-type" id="typesChart"></canvas>
+                <canvas class="charts chart-type" id="weeklyFrequencyChart"></canvas>
                 <div class="btn-utils">
-                    <button class="btn btn-add" id="openAddTypeModal">Add</button>
-                    <button class="btn btn-update" id="openUpdateTypeModal">Update</button>
-                    <button class="btn btn-delete">Remove</button>
+                    <button class="btn btn-update" id="openUpdateFrequencyModal">⚙️ Modify Sales</button>
                 </div>
             </div>
         </section>
@@ -54,7 +52,7 @@
                             </div>
                             <div class="campos">
                                 <label>Select a month</label>
-                                <select class="list-month" name="Mês" id="monthSale">
+                                <select class="list" name="Mês" id="monthSale">
                                     <option class="month-items" value="January">January</option>
                                     <option class="month-items" value="February">February</option>
                                     <option class="month-items" value="March">March</option>
@@ -64,7 +62,7 @@
                                 </select>
                             </div>
 
-                            <button class="btnConfirm" onclick="confirmBtn()">Adicionar</button>
+                            <button class=" btnsConfirm btnConfirmAdd" onclick="confirmBtn()">Add</button>
                         </div>
                     </div>
                 </div>
@@ -76,7 +74,7 @@
             <span class="close" data-close="updateModalSale">&times;</span>
 
             <div class="container-modal">
-                <h1 class="titulo-modal">Atualize as vendas</h1>
+                <h1 class="titulo-modal">Atualize a venda por Sabor</h1>
 
                 <div class="container-form">
                     <div class="form">
@@ -88,7 +86,7 @@
                         </div>
                         <div class="campos">
                             <label>Select a month </label>
-                            <select class="list-month" id="monthSaleUp">
+                            <select class="list" id="monthSaleUp">
                                 <option value="January">January</option>
                                 <option value="February">February</option>
                                 <option value="March">March</option>
@@ -106,7 +104,7 @@
                             <input class="color" type="color" id="colorUp" placeholder="Enter a color">
                         </div>
 
-                        <button class="btnConfirm" onclick="confirmBtnUp()">Atualizar</button>
+                        <button class="btnsConfirm btnConfirmUp" onclick="confirmBtnUp()">Update</button>
                     </div>
                 </div>
             </div>
@@ -128,52 +126,52 @@
                             </select>
                         </div>
 
-                        <button class="btnConfirmRemove" onclick="confirmBtnRemove()">Remover</button>
+                        <button class="btnsConfirm btnConfirmRemove" onclick="confirmBtnRemove()">Remover</button>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
 
+<!--MODAL FREQUENCY SALES-->
+    <section class="modal" id="updateFrequencyModal">
+        <div class="modal-content">
+            <span class="close" data-close="updateFrequencyModal">&times;</span>
 
-<!--MODAL TYPES-->
-    <section class="modal" id="addModalType">
-<!--        <div class="container-modal">-->
-            <div class="modal-content">
-                <span class="close" data-close="closeModal">&times;</span>
-                <h1 class="titulo-modal">Adicione tipo de venda Pizza</h1>
+            <div class="container-modal">
+                <h1 class="titulo-modal">Atualize as vendas de Pizza</h1>
 
-                <div class="form">
-                    <div class="campos">
-                        <label>Tipos</label>
-                        <input type="text" placeholder="Digite o tipo">
+                <div class="container-form">
+                    <div class="form">
+                        <div class="campos">
+                            <label>Select a day</label>
+                            <select class="list" name="Day" id="daysSale">
+                                <option class="days-items" value="Monday">Moday</option>
+                                <option class="days-items" value="Tuesday">Tuesday</option>
+                                <option class="days-items" value="Wednesday">Wednesday</option>
+                                <option class="days-items" value="Thursday">Thursday</option>
+                                <option class="days-items" value="Friday">Friday</option>
+                                <option class="days-items" value="Saturday">Saturday</option>
+                                <option class="days-items" value="Sunday">Sunday</option>
+                            </select>
+                        </div>
+                        <div class="campos">
+                            <label>Sales quantity</label>
+                            <input class="inputs quantidad" type="number" id="quantdadSales" placeholder="Enter a quantidad">
+                        </div>
+
+                        <button class=" btnsConfirm btnConfirmUp" onclick="confirmBtnUpdateFrequency()">Modify</button>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
-
-    <section class="modal" id="updateModalType">
-<!--        <div class="container-modal">-->
-            <div class="modal-content">
-                <span class="close" data-close="closeModal">&times;</span>
-                <h1 class="titulo-modal">Atualize os tipos</h1>
-
-                <div class="form">
-                    <div class="campos">
-                        <label>Tipos</label>
-                        <input type="text" placeholder="Digite o tipo">
-                    </div>
-                </div>
-            </div>
-    </section>
-
 
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./js/main.js"></script>
-    <script src="./js/typesChart.js"></script>
+    <script src="js/weekSaleChart.js"></script>
     <script src="./js/salesChart.js"></script>
 
 </body>

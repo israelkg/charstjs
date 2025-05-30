@@ -38,7 +38,7 @@ const salesChart = new Chart(ctx, {
         plugins: {
             title: {
                 display: true,
-                text: 'Vendas de Pizzas Semestrais',
+                text: 'Vendas de Sabores Semestrais',
                 font: {
                     size: 30,
                     family: 'Arial',
@@ -95,13 +95,8 @@ function confirmBtn(){
     const newColor = colorPizza.value;
     const monthSelect = monthPizza.value.trim();
 
-    const monthArray = [0, 0, 0, 0, 0, 0];
+    const array = generateChartDataArray(monthSelect, parseInt(newQuantdad), dataS.labels, 6);
     const indexMonth = dataS.labels.indexOf(monthSelect);
-    if(indexMonth == -1){
-        alert("Mês inválido selecionado");
-        return;
-    }
-    monthArray[indexMonth] = parseInt(newQuantdad);
 
     const flavorExists = dataS.datasets.some(dataset => dataset.label == newFlavor);
     const colorExists = dataS.datasets.some(dataset => dataset.backgroundColor.includes(newColor));
@@ -115,7 +110,7 @@ function confirmBtn(){
     } else {
         dataS.datasets.push({
             label: newFlavor,
-            data: monthArray,
+            data: array,
             backgroundColor: [newColor],
             borderColor: 'black',
             borderWidth: 1,
@@ -146,13 +141,8 @@ function confirmBtnUp(){
     const flavorSelect = document.getElementById('updateFlavorSelect').value;
     const listMonth = document.getElementById('monthSaleUp').value.trim();
 
-    const monthArray = [0, 0, 0, 0, 0, 0];
+    const array = generateChartDataArray(listMonth, parseInt(newQuantdadUp), dataS.labels, 6);
     const indexMonth = dataS.labels.indexOf(listMonth);
-    if(indexMonth == -1){
-        alert("Mês inválido selecionado");
-        return;
-    }
-    monthArray[indexMonth] = parseInt(newQuantdadUp);
 
     if(newColorUp == "" || newQuantdadUp == "" || newQuantdadUp <= 0){
         alert("Preencha todos os campos!");
@@ -164,7 +154,6 @@ function confirmBtnUp(){
             }
         })
         salesChart.update();
-        // fillSelectFlavorUpdate();
         document.getElementById('updateModalSale').style.display = 'none';
     }
 }
@@ -181,7 +170,7 @@ function fillSelectFlavorRemove(){
         select.appendChild(option);
         }
     )
-};
+}
 
 function confirmBtnRemove() {
     const flavorSelect = document.getElementById('removeFlavorSelect').value;

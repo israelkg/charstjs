@@ -22,38 +22,37 @@ main {
 }
 .container{
     justify-content: space-evenly;
-    /*background-color: #9e8c25;*/
     flex-direction: column;
     align-items: center;
     display: flex;
-    height: 110em;
+    height: 100%;
     width: 100em;
     gap: 7em;
     margin-top: 10em;
 }
 .container .dashboards {
-    /*background-color: antiquewhite;*/
     justify-content: center;
     flex-direction: column;
     align-items: center;
     display: flex;
-    /*height: 50%;*/
     height: 100%;
     width: 70%;
     background-color: #a3a3a3;
     border-radius: 20px;
+    padding: 3em;
  }
 .container .dashboards .charts {
-
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     padding: 1em;
 }
 .btn-utils .btn {
-    border-radius: 20px;
-    padding: 10px 20px;
+    border-radius: 23px;
+    padding: 15px 25px;
     cursor: pointer;
     color: white;
     border: 0;
+    font-size: 18px;
+    margin: 0 10px;
 }
 .btn-add { background-color: #329527;;}
 .btn-update { background-color: #9e8c25;}
@@ -74,7 +73,7 @@ main {
 .modal-content {
     background: #fff;
     padding: 20px;
-    width: 70%;
+    width: 50%;
     border-radius: 10px;
     position: relative;
 }
@@ -105,8 +104,7 @@ main {
     flex-direction: column;
     gap: 10px;
 }
-.form .btnConfirm {
-    background-color: #337c2b;
+.form .btnsConfirm{
     border-radius: 20px;
     padding: 10px 20px;
     margin-top: 10px;
@@ -116,10 +114,6 @@ main {
     border: 0;
     transition: 0.3s;
     cursor: pointer;
-}
-.form .btnConfirm:hover {
-    transform: scale(1.1);
-    background-color: #34ac26;
 }
 .form .campos{
     display: flex;
@@ -143,7 +137,17 @@ input[type="color"] {
     cursor: pointer;
     border-radius: 50px;
 }
-.form .campos .list-month {
+.form .campos .list {
     padding: 7px;
     border-radius: 10px;
 }
+
+/* MODAL BUTTONS*/
+.form .btnConfirmAdd { background-color: #337c2b; }
+.form .btnConfirmAdd:hover { transform: scale(1.1); background-color: #34ac26; }
+
+.form .btnConfirmUp { background-color: #8a7c2d; }
+.form .btnConfirmUp:hover { transform: scale(1.1);background-color: #cdb319; }
+
+.form .btnConfirmRemove { background-color: #8f2626; }
+.form .btnConfirmRemove:hover { transform: scale(1.1); background-color: #da1212; }
