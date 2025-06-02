@@ -116,7 +116,7 @@ function confirmBtn(){
             borderWidth: 1,
         })
         salesChart.update();
-        popularTableSale();
+        popularTable('salesDataTable', dataS);
         document.getElementById('addModalSale').style.display = 'none';
     }
 }
@@ -132,7 +132,7 @@ function fillSelectFlavorUpdate() {
         option.textContent = dataset.label;
         select.appendChild(option);
     })
-    popularTableSale();
+    popularTable('salesDataTable', dataS);
 }
 
 function confirmBtnUp(){
@@ -154,7 +154,7 @@ function confirmBtnUp(){
             }
         })
         salesChart.update();
-        popularTableSale();
+        popularTable('salesDataTable', dataS);
         document.getElementById('updateModalSale').style.display = 'none';
     }
 }
@@ -171,7 +171,7 @@ function fillSelectFlavorRemove(){
         select.appendChild(option);
         }
     )
-    popularTableSale();
+    popularTable('salesDataTable', dataS);
 }
 
 function confirmBtnRemove() {
@@ -184,7 +184,7 @@ function confirmBtnRemove() {
     })
 
     document.getElementById('removeModalSale').style.display = 'none';
-    popularTableSale();
+    popularTable('salesDataTable', dataS);
 }
 
-popularTableSale();
+popularTable('salesDataTable', dataS);

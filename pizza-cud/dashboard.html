@@ -21,10 +21,10 @@
                 <div class="container-table">
                     <div class="table-header">
                         <h2>Dados de Vendas Semestrais</h2>
-                        <button class="btn btn-export" id="exportPdfBtn">Export for PDF</button>
+                        <button class="btn btn-export" id="exportPdfBtnMonth">Export for PDF</button>
                     </div>
                     <div class="table-responsive">
-                        <table id="salesDataTable">
+                        <table id="salesDataTable" class="table-sales">
                             <thead>
                             <tr>
                                 <th>Flower</th>
@@ -48,6 +48,31 @@
                 <canvas class="charts chart-type" id="weeklyFrequencyChart"></canvas>
                 <div class="btn-utils">
                     <button class="btn btn-update" id="openUpdateFrequencyModal">⚙️ Modify Sales</button>
+                </div>
+
+                <div class="container-table">
+                    <div class="table-header">
+                        <h2>Dados de Vendas Semestrais</h2>
+                        <button class="btn btn-export" id="exportPdfBtnWeek">Export for PDF</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="WeekDataTable" class="table-sales">
+                            <thead>
+                            <tr>
+                                <th>Sales</th>
+                                <th>Monday</th>
+                                <th>Tuesday</th>
+                                <th>Wednesday</th>
+                                <th>Thursday</th>
+                                <th>Friday</th>
+                                <th>Saturday</th>
+                                <th>Sunday</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </section>
@@ -199,7 +224,8 @@
     <script src="https://unpkg.com/html2canvas@1.4.1/dist/html2canvas.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/tableSales.js"></script>
-    <script src="js/weekSaleChart.js"></script>
+    <script src="./js/weekSaleChart.js"></script>
     <script src="./js/salesChart.js"></script>
+    <script src="./js/exportPdf.js"></script>
 </body>
 </html>

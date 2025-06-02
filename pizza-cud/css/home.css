@@ -110,7 +110,7 @@ main {
 }
 
 /* Estilos da Tabela */
-#salesDataTable {
+.table-sales {
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
@@ -118,25 +118,25 @@ main {
     color: #333;
     font-family: 'Arial', sans-serif;
 }
-#salesDataTable thead th {
+.table-sales thead th {
     background-color: #555;
     color: white;
     padding: 12px 15px;
     text-align: left;
     border: 1px solid #666;
 }
-#salesDataTable tbody tr {
+.table-sales tbody tr {
     border-bottom: 1px solid #ddd;
 }
-#salesDataTable tbody tr:nth-child(even) {
+.table-sales tbody tr:nth-child(even) {
     background-color: #e9ecef;
 }
-#salesDataTable tbody td {
+.table-sales tbody td {
     padding: 10px 15px;
     text-align: left;
     border: 1px solid #ddd;
 }
-#salesDataTable tbody tr:hover {
+.table-sales tbody tr:hover {
     background-color: #cfe2ff;
     cursor: pointer;
 }

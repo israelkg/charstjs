@@ -46,7 +46,6 @@ const weeklyFrequencyChart = new Chart(ctx, {
     }
 })
 
-
 // MODAL
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("openUpdateFrequencyModal").addEventListener("click", () => {
@@ -67,7 +66,7 @@ function confirmBtnUpdateFrequency(){
     } else{
         dataF.datasets[0].data[indexDay] = parseInt(newQuantidad)
         weeklyFrequencyChart.update();
-        popularTableSale();
+        popularTable('WeekDataTable', dataF);
         document.getElementById("updateFrequencyModal").style.display = 'none';
     }
 }
