@@ -67,6 +67,7 @@ function confirmBtnUpdateFrequency(){
     } else{
         dataF.datasets[0].data[indexDay] = parseInt(newQuantidad)
         weeklyFrequencyChart.update();
+        popularTableSale();
         document.getElementById("updateFrequencyModal").style.display = 'none';
     }
 }

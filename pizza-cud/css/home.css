@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    /*background-color: #329527;*/
+    justify-content: center;
+    align-items: center;
+    min-height: 1064px;
+    display: flex;
+    width: 100%;
+}
+main {
+    /*background-color: #8f2626;*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+.container{
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 100em;
+    gap: 7em;
+    margin-top: 10em;
+}
+.container .dashboards {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 70%;
+    background-color: #a3a3a3;
+    border-radius: 20px;
+    padding: 3em;
+}
+.container .dashboards .charts {
+    margin-bottom: 1em;
+    padding: 1em;
+}
+.btn-utils .btn {
+    border-radius: 23px;
+    padding: 15px 25px;
+    cursor: pointer;
+    color: white;
+    border: 0;
+    font-size: 18px;
+    margin: 0 10px;
+}
+.btn-add { background-color: #329527;;}
+.btn-update { background-color: #9e8c25;}
+.btn-delete { background-color: #8f2626;}
+
+
+/* TABELA */
+.container-table {
+    background-color: #727272;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.table-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.table-header h2 {
+    color: black;
+    font-size: 24px;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+/* Estilos para o Botão de Exportar */
+.btn-export {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn-export:hover {
+    background-color: #218838;
+}
+
+/* Estilos para a Tabela Responsiva */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Estilos da Tabela */
+#salesDataTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #f8f9fa;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+#salesDataTable thead th {
+    background-color: #555;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #666;
+}
+#salesDataTable tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+#salesDataTable tbody tr:nth-child(even) {
+    background-color: #e9ecef;
+}
+#salesDataTable tbody td {
+    padding: 10px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+#salesDataTable tbody tr:hover {
+    background-color: #cfe2ff;
+    cursor: pointer;
+}
